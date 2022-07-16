@@ -1,0 +1,116 @@
+<html>
+    <head>
+        <script src="script.js"></script>
+        <title>MyGES documentation</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        
+        <h1>MYGES API DOCUMENTATION</h1>
+        <div id="userauth">
+            <h2>
+                Authenticate a user and get a token
+            </h2>
+            <h3>
+                Method :
+            </h3>
+            <p>
+                GET https://authentication.kordis.fr/oauth/authorize?response_type=token&client_id=skolae-app
+            </p>
+        
+            <p>
+                <h3>
+                    Parameters :
+                </h3>
+                
+            There is no custom parameter
+        
+            </p>
+
+            <p>
+                <h3>
+                    Headers :
+                </h3>
+                
+            <p><b>Autorization</b> : Basic {credentials} <br> *Convert a string with the value <b>username:password</b> to Base64 to get the appropriate value of {credentials}</p>
+        
+            </p>
+        
+            <p>
+                <h3>
+                    Redirects to an address
+                </h3>
+        
+                <p>The value query parameter <b>access_token</b> of the redirection address (comreseaugesskolae:/oauth2redirect#) is the token you need to use. In the documentation the token will be called {token}, you will need to replace {token} with your token value.</p>
+        
+        
+            </p>
+        </div>
+
+
+
+        <div>
+            <h2>
+                Use the token to get and modify user informations
+            </h2>
+            <h3>
+                Method :
+            </h3>
+            <p>
+                GET https://api.kordis.fr/me/<select>
+                    <option>profile</option>
+                    <option>agenda?start={startTime}&end={endTime}</option>
+                    <option>news?page={page}</option>
+                    <option>news/banners</option>
+                    <option>{year}/grades</option>
+                    <option>{year}/absences</option>
+                    <option>{year}/teachers</option>
+                    <option>{year}/classes'</option>
+                    <option>classes/{classeId}/students</option>
+                    <option>students/{studentId}</option>
+                </select>
+            </p>
+        
+            <p>
+                <h3>
+                    Parameters :
+                </h3>
+
+                <p><b>year</b> : the year the data is from</p>
+                <h3>agenda</h3>
+                <p>startTime and endTime are used to get an interval</p>
+                <p><b>startTime</b> : the start time in milliseconds since the Unix Epoch</p>
+                <p><b>endTime</b> : the end time in milliseconds since the Unix Epoch</p>
+
+                <h3>news</h3>
+                <p><b>page</b> : a page number (int)</p>
+
+
+
+            </p>
+
+            <p>
+                <h3>
+                    Headers :
+                </h3>
+                
+            <p><b>Autorization</b> : bearer {token}</p>
+        
+            </p>
+        
+            <p>
+                <h3>
+                    Returns 
+                </h3>
+        
+                <p>They all return an array</p>
+        
+        
+            </p>
+        </div>
+
+
+
+    </body>
+</html>

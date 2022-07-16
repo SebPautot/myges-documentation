@@ -1,0 +1,18 @@
+body{
+    color: rgb(54, 53, 55);
+    background-color: rgb(255, 255, 255);
+  }
+  h1,h2{
+    background-color:#5fa0d7;
+    display: flex;
+  }
+  #apiselect{
+    background-color:#5fa0d7;
+    display: inline-flex;
+    height:10%;
+    length:100%;
+  }
+  
+  body{
+    font-weight: 100;
+  }
