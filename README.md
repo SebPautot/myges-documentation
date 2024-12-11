@@ -1,8 +1,6 @@
 # myges-documentation
 Documentation for the MyGES API
 
-## THIS API HAS BEEN SUNSET SINCE DECEMBER 10TH 2024
-
 ## Authenticate a user and get a token
 GET https://authentication.kordis.fr/oauth/authorize?response_type=token&client_id=skolae-app
 ### Headers
